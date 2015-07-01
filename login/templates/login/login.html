@@ -1,0 +1,26 @@
+	
+{% extends "login/base.html" %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/login/style.css" media="screen" type="text/css" />
+{% endblock %}
+
+{% block content %}
+	<div class="login-card">
+ 		<div id="login"><h3>Authorization Required<h3></div><br>
+  		<form>
+  			 <input type="text" name="user" placeholder="Username">
+ 			 <input type="password" name="pass" placeholder="Password">
+   			 <input type="submit" name="login" class="login login-submit" value="login">
+ 		</form>
+
+ 	 	<div class="login-help">
+		   <a href="/register">Register</a> .<a href="#">Forgot Password</a>
+		</div>
+	</div>
+
+{% endblock %}

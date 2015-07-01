@@ -1,0 +1,31 @@
+{% extends "login/base.html" %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/login/style2.css" media="screen" type="text/css" />
+{% endblock %}
+
+{% block content %}
+	<div class="login-card">
+ 		<div id="login"><h3>Registeration Form<h3></div><br>
+  		<form method="post" action='.'>{% csrf_token %}
+  			 <!---<input type="text" name="user" placeholder="Username">
+ 			 <input type="password" name="pass" placeholder="Password">
+			 <input type="password" name="cpass" placeholder="Confirm Password">
+			 <input type="email" name="email" placeholder="Email">
+   			 <input type="submit" name="login" class="login login-submit" value="Register">-->
+			<table border="0">
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Register" />
+ 		</form>
+
+ 	 	<div class="login-help">
+		   <a href="/login">Sign in</a> 
+		</div>
+	</div>
+
+{% endblock %}
