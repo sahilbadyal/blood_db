@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+	<head>
+		<meta charset="UTF-8">
+		<title>{% block title %} 
+			{% endblock %}</title>
+		<style>
+		
+		</style>
+		{% block css %}
+		
+		{% endblock%}
+	</head>
+	<body>
+		<header><center><h1>Blood Database Portal</h1><center></ header>
+		<section>
+				{% block content %}
+				{% endblock %}
+		</section>
+		<footer><p>&copy; 2015 Sahil Badyal. All rights reserved.</p></footer>
+	</body>
+</html>

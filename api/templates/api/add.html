@@ -1,0 +1,51 @@
+
+{% extends "api/base.html" %}
+
+{% block title %}
+Welcome 
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/login/style.css" media="screen" type="text/css" />
+{% endblock %}
+
+{% block content %}
+	<div class="login-card">
+ 		<div id="login"><h3>Enter The Details Of Donor<h3></div><br>
+  		<form class="form-horizontal" name="LoginForm" action="/addrecord/" method="post">
+        {% csrf_token %}
+        {% if next %}
+            <input type="hidden" name="next" value="{{ next }}" />
+        {% endif %}
+        <div class="control-group">
+            <label class="control-label" for="first_name"></label>
+            <div class="">
+                <input type="text" id="first_name" name="first_name"  placeholder="First Name">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="last_name"></label>
+            <div class="">
+                <input type="text" id="last_name" name="last_name"  placeholder="Last Name">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="phone_no"></label>
+            <div class="controls">
+                <input type="text" name="phone_no" id="phone_no" placeholder="Phone">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="phone"></label>
+            <div class="controls">
+                <input type="text" name="phone" id="phone" placeholder="Phone">
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn">Submit</button>
+            </div>
+        </div>
+        </form>
+        <a href="/main/">Back</a>
+{% endblock %}
