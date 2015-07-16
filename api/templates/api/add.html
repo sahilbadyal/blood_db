@@ -14,9 +14,6 @@ Welcome
  		<div id="login"><h3>Enter The Details Of Donor<h3></div><br>
   		<form class="form-horizontal" name="LoginForm" action="/addrecord/" method="post">
         {% csrf_token %}
-        {% if next %}
-            <input type="hidden" name="next" value="{{ next }}" />
-        {% endif %}
         <div class="control-group">
             <label class="control-label" for="first_name"></label>
             <div class="">
@@ -32,13 +29,42 @@ Welcome
         <div class="control-group">
             <label class="control-label" for="phone_no"></label>
             <div class="controls">
-                <input type="text" name="phone_no" id="phone_no" placeholder="Phone">
+                <input type="tel" name="phone_no" id="phone_no" placeholder="Phone">
             </div>
         </div>
         <div class="control-group">
-            <label class="control-label" for="phone"></label>
+            <label class="control-label" for="email"></label>
             <div class="controls">
-                <input type="text" name="phone" id="phone" placeholder="Phone">
+                <input type="email" name="email" id="email" placeholder="Email">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="birth_year"></label>
+            <div class="controls">
+                <input type="number" name="birth_year" id="birth_year" placeholder="Birth Year" min="1980" max="2030">
+            </div>
+        </div>
+        <label id="blood_text" for="blood_group">Blood Group</label>
+        <select name="blood_group" >
+         <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="O">O</option>
+         <option value="AB">AB</option>
+        </select>
+        <select name="rh_factor">
+         <option value="True">+</option>
+        <option value="False">-</option>
+        </select>
+        <div class="control-group">
+            <label class="control-label" for="last_donation"></label>
+            <div class="controls">
+                <input type="date" name="last_donation" id="last_donation" placeholder="Last Donation (yyyy-mm-dd)" >
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="address"></label>
+            <div class="controls">
+                <input type="text" name="address" id="address" placeholder="Address">
             </div>
         </div>
         <div class="control-group">
@@ -47,5 +73,7 @@ Welcome
             </div>
         </div>
         </form>
+
+        
         <a href="/main/">Back</a>
 {% endblock %}
