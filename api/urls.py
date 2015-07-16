@@ -5,6 +5,6 @@ from api.views import *
 
 
 urlpatterns = patterns('',
-    url(r'^addrecord/$', addrecord), # If user is not login it will redirect to login page
-    url(r'^search/$', search),
+    url(r'^addrecord/$', record), # If user is not login it will redirect to login page
+    url(r'^search/', search),
 ) 

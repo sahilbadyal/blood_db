@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_tables2',
     'login',
     'api',
 )
@@ -59,20 +60,6 @@ WSGI_APPLICATION = 'blood_db.wsgi.application'
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
 DATABASES = {
-    #'default': {
-     #   'ENGINE': 'django.db.backends.sqlite3',
-      #  'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-       # 'ENGINE': 'mysql.connector.django',
-     #   'USER': 'root',
-    #    'PASSWORD': '123edsaqw',
-    #    'OPTIONS': 
-    #      'autocommit': True,
-    #    },
-	#'NAME': 'blood_db',
-	#'PASSWORD': '123edsaqw',
-	#'HOST': '127.0.0.1',
-	#'PORT': '3306',
-  #  }
 
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -85,8 +72,14 @@ DATABASES = {
 
 }
 
+TEMPLATE_CONTEXT_PROCESSORS = {
+    'django.core.context_processors.request',
+}
 
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
