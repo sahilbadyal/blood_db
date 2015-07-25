@@ -8,12 +8,13 @@ GROUP_CHOICES = (
 )
 
 class Donor(models.Model):
-    first_name = models.CharField(max_length=30,verbose_name="Full Name")
+    first_name = models.CharField(max_length=30,verbose_name="First Name")
     last_name = models.CharField(max_length=30,verbose_name="Last Name")
     blood_group = models.CharField(max_length=2,choices=GROUP_CHOICES,verbose_name="Blood Group")
     rh_factor = models.CharField(max_length=1,verbose_name="RH")
     phone_no = models.CharField(max_length=13,verbose_name="Mobile")
     email = models.EmailField(verbose_name="Email")
-    address = models.CharField(max_length=50,null=True,verbose_name="Address")
+    address = models.CharField(max_length=100,null=True,verbose_name="Address")
     last_donation = models.DateField(verbose_name="Last Donation")
     birth_year = models.IntegerField(verbose_name="Birth Year")
+    #donation_count = models.IntegerField(default=0,verbose_name="Number of Donations",null=True)
