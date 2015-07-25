@@ -91,7 +91,7 @@
 		│   ├── views.py
 		│   └── views.pyc
 		├── manage.py
-		├── README.md                                // You are here ;)
+		├── README.md                                // You are here :wink:
 		└── requirements.txt
 
 
