@@ -6,4 +6,4 @@ psycopg2==2.6
 SQLAlchemy==1.0.4
 whitenoise==1.0.6
 requests==2.3.0
-
+django_tables2==1.0.4
