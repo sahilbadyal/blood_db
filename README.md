@@ -1,6 +1,6 @@
-# blood_db
+﻿# blood_db
 
-## A blood database portal
+## A blood database portal for Hamirpur
 
 ### Getting started
 
