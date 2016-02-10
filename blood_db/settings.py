@@ -20,11 +20,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '^)4j6_3)s@fu$fmx6f_xl6p9^ufz1jirmr4rpw!fd!n*)qf8)0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [*]
 
 
 # Application definition
@@ -59,17 +59,21 @@ WSGI_APPLICATION = 'blood_db.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
+#DATABASES = {
+
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'NAME': 'blood_db',
+#        'USER': 'sbad',
+#        'PASSWORD': '123edsaqw',
+#        'HOST': '127.0.0.1',
+#        'PORT': '5432',
+#    }
+
+#}
+
 DATABASES = {
-
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'blood_db',
-        'USER': 'sbad',
-        'PASSWORD': '123edsaqw',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
-
+    'default': dj_database_url.config()
 }
 
 TEMPLATE_CONTEXT_PROCESSORS = {
@@ -77,9 +81,9 @@ TEMPLATE_CONTEXT_PROCESSORS = {
 }
 
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
+#STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR, "static"),
+#]
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
@@ -96,9 +100,13 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
-
+STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'api/static'),
+    os.path.join(BASE_DIR, 'login/static'),
+)
 
 import django.contrib.auth
 django.contrib.auth.LOGIN_URL = '/'
-
